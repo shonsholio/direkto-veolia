@@ -19,6 +19,7 @@ app.set('views', path.join(__dirname, './views'))
 app.use(morgan('dev'));
 app.use(cors());
 app.use(express.urlencoded({ extended: false}));
+app.use(express.json());
 
 //ROUTES
 app.use('/', mainRoutes)
