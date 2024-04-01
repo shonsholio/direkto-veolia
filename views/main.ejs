@@ -26,6 +26,9 @@
     document.getElementById('email-form').addEventListener('submit', async (e) => {
         e.preventDefault();
         const email = document.getElementById('email').value;
+        const usuario = document.getElementById('name').value;
+        const telefono = document.getElementById('telefono').value;
+
         const response = await fetch('/send-email', {
             method: 'POST',
             headers: {

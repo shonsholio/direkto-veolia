@@ -1,3 +1,5 @@
+const { name } = require('ejs')
+
 const controller = {}
 
 controller.main = (req,res) => {
@@ -25,7 +27,7 @@ controller.send = async (req,res) => {
       from: 'luisferarevalou@gmail.com',
       to: email,
       subject: 'Confirmación de correo',
-      text: 'Gracias por registrarte. Este es tu correo de confirmación.'
+      text: `Gracias ${usuario} por registrarte. Este es tu correo de confirmación. Cualquier cosa te llamamos al ${telefono} registrado.`
   };
 
   try {
