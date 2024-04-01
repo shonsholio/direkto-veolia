@@ -8,46 +8,50 @@
 </head>
 
 <body>
-  <div class="d-flex justify-content-center mt-5">
-    <div class="card col-lg-4 p-4 text-center" style="background-color: #b88681;">
-      <img src = '/malu-logo.png' alt="logo"class="m-2"/>
+  <div class="align-items-center">
+    <div class="card text-center vh-100" style="background-color: #b88681;">
+      <img src='/malu-logo.png' alt="logo"class="p-5"/>
 
-      <form id="email-form" class="mt-3 lh-5">
+      <form id="email-form" class="">
 
-        <label for="sedes" class="text-white">Sede:</label>
-        <select id="sedes" name="sedes" class="col-lg-10">
-          <option value="jardin">Jardín del Río</option>
-          <option value="viva">CC Viva</option>
-          <option value="94">Calle 94</option>
+        <div class="">
+          <label for="sedes" class="text-white col-3 mb-2">Sede:</label>
+          <select id="sedes" name="sedes" class="col-7 text-center" required>
+            <option value="Jardín del Río">Jardín del Río</option>
+            <option value="CC Viva">CC Viva</option>
+            <option value="Calle 94">Calle 94</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="fecha" class="text-white col-3 mb-2">Fecha:</label>
+          <input type="date" id="fecha" name="fecha" class="col-7" required>
+        </div>
+
+        <label for="hora" class="text-white col-3 mb-2">Hora:</label>
+        <select id="hora" name="hora" class="col-7" required>
+          <option value="09:00 a.m.">09:00 a.m.</option>
+          <option value="10:00 a.m.">10:00 a.m.</option>
+          <option value="11:00 a.m.">11:00 a.m.</option>
+          <option value="12:00 p.m.">12:00 p.m.</option>
+          <option value="01:00 p.m.">01:00 p.m.</option>
+          <option value="02:00 p.m.">02:00 p.m.</option>
+          <option value="03:00 p.m.">03:00 p.m.</option>
+          <option value="04:00 p.m.">04:00 p.m.</option>
+          <option value="05:00 p.m.">05:00 p.m.</option>
+          <option value="06:00 p.m.">06:00 p.m.</option>
         </select>
 
-        <label for="fecha" class="text-white">Fecha:</label>
-        <input type="date" id="fecha" name="fecha" required class="col-lg-10">
+        <label for="usuario" class="text-white col-3 mb-2">Nombre:</label>
+        <input type="text" id="usuario" name="usuario" required class="col-7">
 
-        <label for="hora" class="text-white">Hora:</label>
-        <select id="hora" name="hora" class="col-lg-10">
-          <option value="0900">09:00 a.m.</option>
-          <option value="1000">10:00 a.m.</option>
-          <option value="1100">11:00 a.m.</option>
-          <option value="1200">12:00 p.m.</option>
-          <option value="1300">01:00 p.m.</option>
-          <option value="1400">02:00 p.m.</option>
-          <option value="1500">03:00 p.m.</option>
-          <option value="1600">04:00 p.m.</option>
-          <option value="1700">05:00 p.m.</option>
-          <option value="1700">06:00 p.m.</option>
-        </select>
+        <label for="telefono" class="text-white col-3 mb-2">Telefono:</label>
+        <input type="text" id="telefono" name="telefono" required class="col-7">
 
-        <label for="usuario" class="text-white">Nombre:</label>
-        <input type="text" id="usuario" name="usuario" required class="col-lg-9">
+        <label for="email" class="text-white col-3 mb-2">e-mail:</label>
+        <input type="email" id="email" name="email" required class="col-7">
 
-        <label for="telefono" class="text-white">Telefono:</label>
-        <input type="text" id="telefono" name="telefono" required class="col-lg-9">
-
-        <label for="email" class="text-white">e-mail:</label>
-        <input type="email" id="email" name="email" required class="col-lg-9">
-
-        <button type="submit" class="mt-4 mb-3 col-lg-10">Reservar</button>
+        <button type="submit" class="mt-5 col-10 p-2">Reservar</button>
 
       </form>
     </div>
@@ -72,6 +76,9 @@
 
     document.getElementById('email-form').addEventListener('submit', async (e) => {
         e.preventDefault();
+        const sedes = document.getElementById('sedes').value;
+        const fecha = document.getElementById('fecha').value;
+        const hora = document.getElementById('hora').value;
         const usuario = document.getElementById('usuario').value;
         const telefono = document.getElementById('telefono').value;
         const email = document.getElementById('email').value
@@ -82,11 +89,13 @@
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ usuario , telefono , email , codigo })
+            body: JSON.stringify({ sedes , fecha , hora , usuario , telefono , email , codigo })
         });
 
         if (response.ok) {
             alert('Correo enviado con éxito');
+            window.location.href = '/confirm';
+            console.log(sedes, fecha)           
         } else {
             alert('Error al enviar el correo');
         }
