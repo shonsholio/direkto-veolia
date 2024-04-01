@@ -4,19 +4,20 @@ controller.main = (req,res) => {
   res.render('main')
 }
 
-controller.prueba = (req,res) => {
+controller.got = (req,res) => {
   res.send('AQUI ENVIO LOS DATOS')
 }
 
 controller.send = async (req,res) => {
-  const nodemailer = require('nodemailer');
   const { email } = req.body;
+  const nodemailer = require('nodemailer');
 
   let transporter = nodemailer.createTransport({
       service: 'Gmail',
       auth: {
           user: 'luisferarevalou@gmail.com',
-          pass: 'Consep7o123'
+          // PARA LA CONFIGURACION DEL CORREO, TOCA HACERLO DESDE GMAIL, EN CONTRASENAS DE APLICACIONES
+          pass: 'tnpd ksvn pkne pwep'
       }
   });
 
