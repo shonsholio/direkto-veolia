@@ -11,7 +11,7 @@ controller.got = (req,res) => {
 }
 
 controller.send = async (req,res) => {
-  const { email } = req.body;
+  const { email , telefono , usuario , codigo } = req.body;
   const nodemailer = require('nodemailer');
 
   let transporter = nodemailer.createTransport({
@@ -27,7 +27,7 @@ controller.send = async (req,res) => {
       from: 'luisferarevalou@gmail.com',
       to: email,
       subject: 'Confirmación de correo',
-      text: `Gracias ${usuario} por registrarte. Este es tu correo de confirmación. Cualquier cosa te llamamos al ${telefono} registrado.`
+      text: `Gracias por registrarte. ${ usuario } Este es tu correo de confirmación. ${ telefono }. El código de seguridad es ${ codigo }`
   };
 
   try {
@@ -38,7 +38,6 @@ controller.send = async (req,res) => {
       console.log(error);
       res.status(500).send('Error al enviar el correo');
   }
-
 };
 
 module.exports = controller

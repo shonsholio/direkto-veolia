@@ -24,6 +24,9 @@ app.use(express.json());
 //ROUTES
 app.use('/', mainRoutes)
 
+//STATIC FILES
+app.use(express.static(path.join(__dirname, './public')))
+
 app.listen(app.get('port'), () => {
   console.log('CONECTADOS AL PUERTO ' + (app.get('port')))
 })
