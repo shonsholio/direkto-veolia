@@ -2,6 +2,7 @@ var urlActual = window.location.href;
 
 var indexCarpeta = urlActual.slice(22,26)
 
+console.log(indexCarpeta)
 var slider = [
                 `${indexCarpeta}/1.jpg`,
                 `${indexCarpeta}/2.jpg`,
