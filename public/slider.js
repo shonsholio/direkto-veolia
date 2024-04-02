@@ -1,6 +1,6 @@
 var urlActual = window.location.href;
 
-var indexCarpeta = urlActual.slice(22,26)
+var indexCarpeta = urlActual.slice(-3)
 
 console.log(indexCarpeta)
 var slider = [
