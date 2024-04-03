@@ -21,7 +21,29 @@
         </div>
       </div>
     </div>  
+  
+  <div class="text-center">
+    <% data.forEach((bodega, index) => { %>  
+      <% if(apto == bodega.url) { %>
+        <h3>UBICACION: <%=bodega.ubicacion %></h3>
+        <h6>AREA OFICINAS: <%=bodega.areaBodega %> M2</h6>
+        <h6>AREA PATIO: <%=bodega.areaOficinas %> M2</h6>
+        <h6>AREA PATIO: <%=bodega.areaPatio %> M2</h6>
+        <h6>AREA COMPLETA: <%=bodega.areaBodega + bodega.areaOficinas + bodega.areaPatio %> M2</h6>
+        <% let areaTotal = bodega.areaBodega + bodega.areaOficinas + bodega.areaPatio %>
+        <h6>VALOR ARRIENDO: $ <%=bodega.precio.toLocaleString() %></h6>
+        <% let precio = parseInt(bodega.precio, 10) %>
+        <% let iva = precio * 0.19 %>
+        <h6>IVA ARRIENDO: $ <%=iva.toLocaleString() %></h6>
+        <h6>ADMINISTRACION: $ <%=bodega.admon.toLocaleString() %></h6>
+        <% let metroCuadrado = Math.floor(precio / areaTotal) %>
+        <h6>VALOR M2: $ <%=metroCuadrado.toLocaleString() %></h6>
 
+
+
+  </div>
+
+  <% }})  %>
   <script src="slider.js"></script>
 
 </body>

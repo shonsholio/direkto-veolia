@@ -1,0 +1,22 @@
+[
+  { 
+    "url": "op1",
+    "ubicacion": "Galapa - Atlántico", 
+    "areaBodega": 1540, 
+    "areaOficinas": 180, 
+    "areaPatio": 0,
+    "precio": 28750000,
+    "admon": 2875000,
+    "descripcion": ""
+  },
+  {
+    "url": "op2",
+    "ubicacion": "Corredor Circunvalar", 
+    "areaBodega": 1200, 
+    "areaOficinas": 0, 
+    "areaPatio": 400,
+    "precio": 23392000,
+    "admon": 1408000,
+    "descripcion": ""
+  }
+]
