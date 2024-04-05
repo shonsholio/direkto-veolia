@@ -25,18 +25,20 @@
   <div class="text-center">
     <% data.forEach((bodega, index) => { %>  
       <% if(apto == bodega.url) { %>
-        <h3>UBICACION: <%=bodega.ubicacion %></h3>
-        <h6>AREA BODEGA : <%=bodega.areaBodega %> M2</h6>
-        <h6>AREA OFICINAS : <%=bodega.areaOficinas %> M2</h6>
-        <h6>AREA PATIO : <%=bodega.areaPatio %> M2</h6>
-        <h6>AREA COMPLETA : <%=bodega.areaBodega + bodega.areaOficinas + bodega.areaPatio %> M2</h6>
+        <p class="display-6"><%=bodega.ubicacion %></p>
+        <h6>Area Bodega : <%=bodega.areaBodega %> M2</h6>
+        <h6>Area Oficinas : <%=bodega.areaOficinas %> M2</h6>
+        <h6>Area Patio : <%=bodega.areaPatio %> M2</h6>
+        <h6>Area Completa : <%=bodega.areaBodega + bodega.areaOficinas + bodega.areaPatio %> M2</h6>
         <% let areaTotal = bodega.areaBodega + bodega.areaOficinas + bodega.areaPatio %>
-        <h6>VALOR ARRIENDO: $ <%=bodega.precio.toLocaleString() %></h6>
+        <br>
+        <h6>Valor arriendo: $ <%=bodega.precio.toLocaleString() %></h6>
         <% let precio = parseInt(bodega.precio, 10) %>
         <% let iva = precio * 0.19 %>
-        <h6>IVA ARRIENDO: $ <%=iva.toLocaleString() %></h6>
-        <h6>ADMINISTRACION: $ <%=bodega.admon.toLocaleString() %></h6>
-        <% let metroCuadrado = Math.floor(precio / areaTotal) %>
+        <h6>IVA arriendo: $ <%=iva.toLocaleString() %></h6>
+        <h6>Administración: $ <%=bodega.admon.toLocaleString() %></h6>
+        <p class="display-6">Canon total mes : $ <%=(bodega.precio + iva +bodega.admon).toLocaleString() %></p>
+        <% let metroCuadrado = Math.floor((bodega.precio + iva +bodega.admon) / areaTotal) %>
         <h6>VALOR M2: $ <%=metroCuadrado.toLocaleString() %></h6>
 
         <br>
@@ -45,21 +47,23 @@
           <p class="col-lg-8"><%=bodega.descripcion %> </p>
         </div>
         
-        <div class="">
-          <p class="display-6">CARACTERISTICAS:</p>
-          <ul class="d-lg-inline">
-            <% for (z=0; z < (bodega.caracteristicas.length); ++z) { %>
-              <li class=""><%=bodega.caracteristicas[z]  %></li>
-            </ul>
-          <% } %>
-        </div>  
-
-
-
+        <p class="display-6">CARACTERISTICAS:</p>
+        <div class="d-flex justify-content-center">
+          <div class="col-lg-8 col-10">
+            <ul class="" >
+              <% for (z = 0; z < (bodega.caracteristicas.length); ++z) { %>
+                <li class="" style="list-style-type: none;"><%=bodega.caracteristicas[z] %></li>
+                <br>
+              </ul>
+            <% } %>
+          </div>  
+        </div>
 
   </div>
 
   <% }})  %>
+
+  <br><br><br>
   <script src="slider.js"></script>
 
 </body>
