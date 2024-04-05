@@ -26,10 +26,10 @@
     <% data.forEach((bodega, index) => { %>  
       <% if(apto == bodega.url) { %>
         <h3>UBICACION: <%=bodega.ubicacion %></h3>
-        <h6>AREA OFICINAS: <%=bodega.areaBodega %> M2</h6>
-        <h6>AREA PATIO: <%=bodega.areaOficinas %> M2</h6>
-        <h6>AREA PATIO: <%=bodega.areaPatio %> M2</h6>
-        <h6>AREA COMPLETA: <%=bodega.areaBodega + bodega.areaOficinas + bodega.areaPatio %> M2</h6>
+        <h6>AREA BODEGA : <%=bodega.areaBodega %> M2</h6>
+        <h6>AREA OFICINAS : <%=bodega.areaOficinas %> M2</h6>
+        <h6>AREA PATIO : <%=bodega.areaPatio %> M2</h6>
+        <h6>AREA COMPLETA : <%=bodega.areaBodega + bodega.areaOficinas + bodega.areaPatio %> M2</h6>
         <% let areaTotal = bodega.areaBodega + bodega.areaOficinas + bodega.areaPatio %>
         <h6>VALOR ARRIENDO: $ <%=bodega.precio.toLocaleString() %></h6>
         <% let precio = parseInt(bodega.precio, 10) %>
