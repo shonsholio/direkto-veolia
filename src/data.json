@@ -7,7 +7,20 @@
     "areaPatio": 0,
     "precio": 28750000,
     "admon": 2875000,
-    "descripcion": ""
+    "descripcion": "Bodega ubicada en un Parque Industrial localizado en la Vía Cordialidad en el Km. 2.5 vía a Galapa, cerca a los municipios de Barranquilla , Galapa, Soledad (a 8km al este) y Juan Mina (5km., al noroeste).  ",
+    "caracteristicas": [
+      "Sistema de generador de energía de respaldo para bodegas", 
+      "Amplios andenes de descarga", 
+      "Rampa de descarga de contenedores con plataforma hidráulica niveladora", 
+      "Cada bodega cuenta con una carga garantizada de 30 kva con posibilidad de ampliación", 
+      "Dos tanques para almacenamiento de agua con capacidad de 1200 m3", 
+      "Vía principal de 15.5 mts de ancho.",
+      "Oficina de administración y condominio en el mismo complejo", 
+      "Cubierta y paredes construidas con un material totalmente aislante de temperatura que brinda grandes ventajas térmicas (láminas de poliuretano inyectado)", 
+      "Sistema de video vigilancia desde la portería", 
+      "Sistema central de comunicación de bodegas con la portería de acceso", 
+      "Portones de acceso con control remoto", 
+      "Area social, disponible con caney y parrillera para uso recreativo, común del condominio"]
   },
   {
     "url": "op2",
@@ -17,6 +30,17 @@
     "areaPatio": 400,
     "precio": 23392000,
     "admon": 1408000,
-    "descripcion": ""
+    "descripcion": "Se encuentra estratégicamente ubicada dentro de un Parque Industrial y Comercial, en el cruce de la Avenida Circunvalar con la carretera La Cordialidad, una de las vías que comunica con las carreteras hacia la ciudad de Cartagena y Santa Marta y al interior del departamento del Atlántico.  Desde aquí se llega en 20 minutos al centro de la ciudad, 10 minutos hasta el aeropuerto y 15 minutos al puerto de Barranquilla.",
+    "caracteristicas": [
+      "Cuenta con acceso Vehicular de 4 carriles (2 de ingreso y 2 de salida)",
+      "Amplias vías de acceso a las bodegas, de 10m de ancho, que permiten el tránsito de vehículos de carga sin ningún tipo de inconveniente.",
+      "Acceso peatonal",
+      "Acceso vehicular 24 horas, sin ningún tipo de restricción",
+      "Ambos accesos cuentan con sistemas electrónicos de última generación",
+      "Cerramientos perimetrales con cercas eléctricas",
+      "Sistema de circuito cerrado de TV",
+      "Redes propias de energía, agua potable, alcantarillado y planta de tratamiento de aguas residuales domésticas (PTARD).",
+      "Todas las acometidas de servicios públicos domiciliarios de las bodegas son subterráneas."
+    ]
   }
 ]

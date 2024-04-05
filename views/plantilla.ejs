@@ -39,6 +39,22 @@
         <% let metroCuadrado = Math.floor(precio / areaTotal) %>
         <h6>VALOR M2: $ <%=metroCuadrado.toLocaleString() %></h6>
 
+        <br>
+        <p class="display-6">DESCRIPCION </p>
+        <div class="d-lg-flex justify-content-center">
+          <p class="col-lg-8"><%=bodega.descripcion %> </p>
+        </div>
+        
+        <div class="">
+          <p class="display-6">CARACTERISTICAS:</p>
+          <ul class="d-lg-inline">
+            <% for (z=0; z < (bodega.caracteristicas.length); ++z) { %>
+              <li class=""><%=bodega.caracteristicas[z]  %></li>
+            </ul>
+          <% } %>
+        </div>  
+
+
 
 
   </div>
